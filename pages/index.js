@@ -229,7 +229,7 @@ export default function Home() {
         <Fade bottom>
           <Carousel responsive={responsive} infinite={true}>
             {items.map((item, i) => (
-              <div>
+              <div key={i}>
                 <center>
                   <h2>{item.name}</h2>
                 </center>
