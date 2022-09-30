@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
-import Fade from 'react-reveal/Fade';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function Home() {
   var items = [
     {
@@ -71,6 +74,9 @@ export default function Home() {
       items: 1,
     },
   };
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <main>
       <div
@@ -81,19 +87,19 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <Fade bottom>
+        <div data-aos="fade-up">
         <center>
         <h1 style={{ color: "white", fontSize: "4rem", margin: "0" }}>
         The Chef of Miami Resturant
         </h1>
         </center>
-        </Fade>
-        <Fade bottom>
+        </div>
+        <div data-aos="fade-up">
         <p style={{ color: "white", fontSize: "1.5rem" }}>
           Best Place to eat in miami
         </p>
-        </Fade>
-        <Fade bottom>
+        </div>
+        <div data-aos="fade-up">
         <Button
               variant="contained"
               style={{ backgroundColor: "orange", borderRadius: "50px" }}
@@ -101,7 +107,7 @@ export default function Home() {
             >
               Order Now
             </Button>
-            </Fade>
+            </div>
       </div>
 
       <Grid
@@ -115,14 +121,14 @@ export default function Home() {
       >
         <Grid item xs={12} md={6}>
           <div>
-            <Fade left>
+            <div data-aos="fade-up">
             <h1>
               We Are More Than<br></br>Multiple Service
             </h1>
-            </Fade>
+            </div>
             <br></br>
             <br></br>
-            <Fade left>
+            <div data-aos="fade-up">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -131,27 +137,27 @@ export default function Home() {
               incididunt ut labore et dolore magna aliqua. Laboris nisi ut
               aliquip ex ea commodo consequat.
             </p>
-            </Fade>
+            </div>
             <br></br>
             <br></br>
-            <Fade left>
+            <div data-aos="fade-up">
             <Button
               variant="contained"
               style={{ backgroundColor: "black", borderRadius: "50px" }}
             >
               About Us
             </Button>
-            </Fade>
+            </div>
           </div>
         </Grid>
         <Grid item xs={12} md={6} style={{padding:'20px'}}>
           <Grid container>
             <Grid item xs={12} md={6}>
               <Grid container>
-                <Fade bottom>
+                <div data-aos="fade-up">
                 <Grid item xs={12} md={6}>
                   <center>
-                    <img
+                    <Image
                       src="/images/online-order.png"
                       height={40}
                       width={40}
@@ -160,15 +166,15 @@ export default function Home() {
                     <p>Laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </center>
                 </Grid>
-                </Fade>
+                </div>
               </Grid>
             </Grid>
             <Grid item xs={12} md={6}>
               <Grid container>
-              <Fade bottom>
+              <div data-aos="fade-up">
                 <Grid item xs={12} md={6}>
                   <center>
-                    <img
+                    <Image
                       src="/images/delivery-man.png"
                       height={40}
                       width={40}
@@ -177,7 +183,7 @@ export default function Home() {
                     <p>Laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </center>
                 </Grid>
-                </Fade>
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -185,28 +191,28 @@ export default function Home() {
           <Grid container>
             <Grid item xs={12} md={6}>
               <Grid container>
-              <Fade bottom>
+              <div data-aos="fade-up">
                 <Grid item xs={12} md={6}>
                   <center>
-                    <img src="/images/add-to-cart.png" height={40} width={40} />
+                    <Image src="/images/add-to-cart.png" height={40} width={40} />
                     <h2>Easy to Order</h2>
                     <p>Laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </center>
                 </Grid>
-                </Fade>
+                </div>
               </Grid>
             </Grid>
             <Grid item xs={12} md={6}>
               <Grid container>
-              <Fade bottom>
+              <div data-aos="fade-up">
                 <Grid item xs={12} md={6}>
                   <center>
-                    <img src="/images/24-hours.png" height={40} width={40} />
+                    <Image src="/images/24-hours.png" height={40} width={40} />
                     <h2>24/7 Support</h2>
                     <p>Laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </center>
                 </Grid>
-                </Fade>
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -218,15 +224,15 @@ export default function Home() {
       <br></br>
 
       <center>
-        <Fade bottom>
+        <div data-aos="fade-up">
         <h2 style={{ fontSize: "3rem", margin: "0" }}>Our Menu</h2>
-        </Fade>
+        </div>
       </center>
 
       <br></br>
       <Grid container>
         <Grid item xs={12}>
-        <Fade bottom>
+        <div data-aos="fade-up">
           <Carousel responsive={responsive} infinite={true}>
             {items.map((item, i) => (
               <div key={i}>
@@ -234,7 +240,7 @@ export default function Home() {
                   <h2>{item.name}</h2>
                 </center>
                 <center>
-                  <img
+                  <Image
                     src={"/images/menu" + (i + 1) + ".jpg"}
                     height={350}
                     width={350}
@@ -247,7 +253,7 @@ export default function Home() {
               </div>
             ))}
           </Carousel>
-          </Fade>
+          </div>
         </Grid>
       </Grid>
       <br></br>
@@ -268,7 +274,7 @@ export default function Home() {
           >
             <Grid container>
               <Grid item xs={12}>
-                <Fade bottom>
+                <div data-aos="fade-up">
                 <Carousel
                   infinite={true}
                   showDots={true}
@@ -300,7 +306,7 @@ export default function Home() {
                     <p>-By Customer Name 3</p>
                   </div>
                 </Carousel>
-                </Fade>
+                </div>
               </Grid>
             </Grid>
           </div>
@@ -310,9 +316,9 @@ export default function Home() {
       <br></br>
       <br></br>
       <center>
-        <Fade bottom>
+        <div data-aos="fade-up">
         <h2 style={{ fontSize: "3rem", margin: "0" }}>Real Taste of Miami</h2>
-        </Fade>
+        </div>
       </center>
 
       <br></br>
@@ -339,10 +345,10 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ><Fade left>
+        ><div data-aos="fade-up">
           <h2 style={{ fontSize: "6rem", margin: "0" }}>21</h2>
           <p style={{ fontSize: "2rem", margin: "0" }}>Year of Experience</p>
-          </Fade>
+          </div>
         </Grid>
        
         
@@ -357,12 +363,12 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          <Fade bottom>
+          <div data-aos="fade-up">
           <h2 style={{ fontSize: "6rem", margin: "0" }}>19</h2>
           <p style={{ fontSize: "2rem", margin: "0" }}>
             Millions Happy Clients
           </p>
-          </Fade>
+          </div>
         </Grid>
       
        
@@ -376,10 +382,10 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        > <Fade right>
+        > <div data-aos="fade-up">
           <h2 style={{ fontSize: "6rem", margin: "0" }}>3</h2>
           <p style={{ fontSize: "2rem", margin: "0" }}>Locations</p>
-          </Fade>       
+          </div>       
         </Grid>
        
       </Grid>
@@ -392,9 +398,9 @@ export default function Home() {
       <Grid container>
        
         <Grid item xs={12} md={6}style={{padding:'40px'}}>
-        <Fade left>
-          <img src="/images/menu1.jpg" size="cover" width="400" height="350"/>
-          </Fade>
+        <div data-aos="fade-up">
+          <Image src="/images/menu1.jpg" size="cover" width="400" height="350"/>
+          </div>
         </Grid>
         
         
@@ -409,7 +415,7 @@ export default function Home() {
             padding:'40px'
           }}
         >
-          <Fade right>
+          <div data-aos="fade-up">
           <h1>Try Before You Subscribe</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -429,7 +435,7 @@ export default function Home() {
               Subscribe Now
             </Button>
           </div>
-          </Fade>
+          </div>
         </Grid>
        
       </Grid>
@@ -442,15 +448,15 @@ export default function Home() {
       <Grid container>
       
         <Grid item xs={12} md={6} style={{justifyContent:'center',alignItems:'center',display:'flex'}}>
-        <Fade left>
+        <div data-aos="fade-up">
          <center>
          <center><h1>Follow Us on Around Web</h1></center>
           <Grid item xs={12} style={{justifyContent:'space-evenly',alignItems:'space-evenly',display:'flex'}}>
-            <img src="/images/facebook.png" width={40} height={40}/>
-            <img src="/images/twitter.png" width={40} height={40}/>
-            <img src="/images/youtubeIcn.png" width={40} height={40}/>
-            <img src="/images/instaIcn.png" width={40} height={40}/>
-            <img src="/images/linkedin.png" width={40} height={40}/>
+            <Image src="/images/facebook.png" width={40} height={40}/>
+            <Image src="/images/twitter.png" width={40} height={40}/>
+            <Image src="/images/youtubeIcn.png" width={40} height={40}/>
+            <Image src="/images/instaIcn.png" width={40} height={40}/>
+            <Image src="/images/linkedin.png" width={40} height={40}/>
             <br></br>
       <br></br>
       <br></br>
@@ -458,14 +464,14 @@ export default function Home() {
       <br></br>
           </Grid>
          </center>
-         </Fade>
+         </div>
         </Grid>
         
        
         <Grid item xs={12} md={6}>
-        <Fade right>
+        <div data-aos="fade-up">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14373.80382138094!2d-80.24094976259214!3d25.75566438328323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6545e9efae3%3A0xff12d5d8de4edb9d!2sShenandoah%20Park!5e0!3m2!1sen!2sin!4v1664247551212!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </Fade>
+        </div>
         </Grid>
        
       </Grid>

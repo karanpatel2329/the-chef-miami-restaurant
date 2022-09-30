@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: false,
+  images:{
+    unoptimized:true
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  assetPrefix: '.'
 }
+
 
 module.exports = nextConfig
