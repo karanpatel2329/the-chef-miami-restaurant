@@ -81,7 +81,7 @@ export default function Home() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-  
+    backgroundImage: "url('/images/background.jpg')",
   }
   return (
     <main>
