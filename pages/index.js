@@ -81,7 +81,12 @@ export default function Home() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: "url('/images/background.jpg')",
+    backgroundImage: "url('/images/background.jpg') !important",
+    background: "linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
   }
   return (
     <main>
