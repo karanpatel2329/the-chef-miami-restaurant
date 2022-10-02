@@ -81,8 +81,7 @@ export default function Home() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: "url('/images/background.jpg') !important",
-    background: "linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))",
+    background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),url("images/background.jpg")',
     backgroundSize: "cover",
     backgroundPosition: "center center",
     backgroundAttachment: "fixed",
@@ -459,12 +458,13 @@ export default function Home() {
          <center>
          <center><h1>Follow Us on Around Web</h1></center>
           <Grid item xs={12} style={{justifyContent:'space-evenly',alignItems:'space-evenly',display:'flex'}}>
-            <Image src="/images/facebook.png" width={40} height={40}/>
-            <Image src="/images/twitter.png" width={40} height={40}/>
-            <Image src="/images/youtubeIcn.png" width={40} height={40}/>
-            <Image src="/images/instaIcn.png" width={40} height={40}/>
-            <Image src="/images/linkedin.png" width={40} height={40}/>
-            <br></br>
+            
+          <div style={{height:'40px',width:'40px',minHeight:'40px !important',maxHeight:'40px !important'}}><Image src="/images/facebook.png" width={40} height={40} /></div>
+            <div style={{height:'40px',width:'40px',minHeight:'40px !important',maxHeight:'40px !important'}}><Image src="/images/twitter.png" width={40} height={40}/></div>
+            <div style={{height:'40px',width:'40px',minHeight:'40px !important',maxHeight:'40px !important'}}><Image src="/images/youtubeIcn.png" width={40} height={40}/></div>
+            <div style={{height:'40px',width:'40px',minHeight:'40px !important',maxHeight:'40px !important'}}> <Image src="/images/instaIcn.png" width={40} height={40}/></div>
+            <div style={{height:'40px',width:'40px',minHeight:'40px !important',maxHeight:'40px !important'}}> <Image src="/images/linkedin.png" width={40} height={40}/></div>
+           <br></br>
             
               <br></br>
       <br></br>
